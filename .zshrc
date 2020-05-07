@@ -21,11 +21,12 @@ antigen bundle docker
 antigen bundle node
 antigen bundle npm
 antigen bundle history-substring-search
-
-
+antigen bundle z
+antigen bundle vscode
+antigen bundle sudo
 
 # Load the theme.
-antigen theme af-magic
+antigen theme robbyrussell
 
 # Tell Antigen that you're done.
 antigen apply
@@ -33,9 +34,6 @@ antigen apply
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias code="code ."
-
-## Colorize the ls output ##
-alias ls='ls --color=auto'
  
 ## Use a long listing format ##
 alias ll='ls -la'
@@ -57,5 +55,25 @@ alias .5='cd ../../../../..'
 # get ip address
 alias myip='curl ifconfig.me'
 
+# Setup substring history
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+# Why is the date American even when the locale is en_GB?  Choose ISO form anyway.
+export TIME_STYLE="long-iso"
+
+# Play safe!
+alias 'rm=rm -i'
+alias 'mv=mv -i'
+alias 'cp=cp -i'
+
+# Zsh settings for history
+HISTORY_IGNORE="(ls|[bf]g|exit|reset|clear|cd|cd ..|cd..)"
+HISTSIZE=25000
+HISTFILE=~/.zsh_history
+SAVEHIST=100000
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
