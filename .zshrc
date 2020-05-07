@@ -56,7 +56,7 @@ alias .5='cd ../../../../..'
 alias pubip='curl ifconfig.me'
 
 # get local ip address
-alias lclip=hostname -I
+alias lclip='hostname -I'
 
 # Setup substring history
 bindkey '^[[A' history-substring-search-up
