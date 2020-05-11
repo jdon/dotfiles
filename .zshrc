@@ -65,11 +65,6 @@ bindkey '^[[B' history-substring-search-down
 # Why is the date American even when the locale is en_GB?  Choose ISO form anyway.
 export TIME_STYLE="long-iso"
 
-# Play safe!
-alias 'rm=rm -i'
-alias 'mv=mv -i'
-alias 'cp=cp -i'
-
 # Zsh settings for history
 HISTORY_IGNORE="(ls|[bf]g|exit|reset|clear|cd|cd ..|cd..)"
 HISTSIZE=25000
