@@ -24,6 +24,8 @@ antigen bundle history-substring-search
 antigen bundle z
 antigen bundle vscode
 antigen bundle sudo
+antigen bundle kubectl
+antigen bundle terraform
 
 # Load the theme.
 antigen theme robbyrussell
@@ -53,10 +55,7 @@ alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 
 # get ip address
-alias pubip='curl ifconfig.me'
-
-# get local ip address
-alias lclip='hostname -I'
+alias getip='curl ifconfig.me && echo "-" && hostname -I'
 
 # Setup substring history
 bindkey '^[[A' history-substring-search-up
@@ -64,6 +63,11 @@ bindkey '^[[B' history-substring-search-down
 
 # Why is the date American even when the locale is en_GB?  Choose ISO form anyway.
 export TIME_STYLE="long-iso"
+
+# Play safe!
+alias 'rm=rm -i'
+alias 'mv=mv -i'
+alias 'cp=cp -i'
 
 # Zsh settings for history
 HISTORY_IGNORE="(ls|[bf]g|exit|reset|clear|cd|cd ..|cd..)"
